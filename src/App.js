@@ -1,6 +1,8 @@
 // Imports
 import "./App.css";
 import { useState } from "react";
+import { Task } from "./Task";
+import { toHaveStyle } from "@testing-library/jest-dom/matchers";
 
 function App() {
   // State hooks for managing todo list and new tasks
@@ -56,15 +58,22 @@ function App() {
       <div className="list">
         {/* Mapping over todoList array to render Task component for each task */}
         {todoList.map((task) => (
-          <div key={task.id} className="task">
-            <h1>{task.taskName}</h1>
-            <button className="complete" onClick={() => completeTask(task.id)}>
-              Completed
-            </button>
-            <button className="delete" onClick={() => deleteTask(task.id)}>
-              X
-            </button>
-          </div>
+          // <div key={task.id} className="task">
+          //   <h1>{task.taskName}</h1>
+          //   <button className="complete" onClick={() => completeTask(task.id)}>
+          //     Completed
+          //   </button>
+          //   <button className="delete" onClick={() => deleteTask(task.id)}>
+          //     X
+          //   </button>
+          // </div>
+          <Task
+            taskName={task.taskName}
+            id={task.id}
+            completed={task.completed}
+            deleteTask={deleteTask}
+            completeTask={completeTask}
+          />
         ))}
       </div>
     </div>
