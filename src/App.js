@@ -2,7 +2,6 @@
 import "./App.css";
 import { useState } from "react";
 import { Task } from "./Task";
-import { toHaveStyle } from "@testing-library/jest-dom/matchers";
 
 function App() {
   // State hooks for managing todo list and new tasks
